@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    karateVersion  = '1.5.2'
+    awsSdkVersion  = '2.25.31'
+    junitVersion   = '5.10.2'
+}
+
+dependencies {
+    // Karate + JUnit 5 runner
+    testImplementation "io.karatelabs:karate-junit5:$karateVersion"
+
+    // AWS SDK v2 (DynamoDB)
+    implementation "software.amazon.awssdk:dynamodb:$awsSdkVersion"
+
+    // JUnit 5
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly  "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
+    // Logging SLF4J
+    testImplementation "org.slf4j:slf4j-api:2.0.12"
+    testImplementation "ch.qos.logback:logback-classic:1.5.3"
+
+    // Cucumber Reporting
+    testImplementation("net.masterthought:cucumber-reporting:5.7.6")
+    
+    // Data Faker
+    testImplementation "net.datafaker:datafaker:2.2.2"
+    
+    // Commons IO
+    testImplementation "commons-io:commons-io:2.15.1"
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties = System.properties
+}
+
+// Estructura estándar de Gradle - archivos de prueba en src/test/java
+sourceSets {
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        resources {
+            srcDir 'src/test/resources'
+        }
+    }
+}
