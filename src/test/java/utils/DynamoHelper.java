@@ -10,7 +10,6 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class DynamoHelper implements AutoCloseable {
 
@@ -128,7 +127,6 @@ public class DynamoHelper implements AutoCloseable {
         return result;
     }
 
-    // ---------- DELETE ----------
     public void deleteById(String id) {
         try {
             Map<String, AttributeValue> key = Map.of(
@@ -148,7 +146,6 @@ public class DynamoHelper implements AutoCloseable {
         }
     }
 
-    // ---------- CLEANUP ----------
     @Override
     public void close() {
         try {

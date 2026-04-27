@@ -1,4 +1,4 @@
-Feature: Certificación de inventario en DynamoDB (creación → consulta → eliminación)
+Feature: Inventory Certification in DynamoDB (Item Creation)
 
   Background:
     * def ItemFactory = Java.type('factories.ItemFactory')
@@ -6,11 +6,16 @@ Feature: Certificación de inventario en DynamoDB (creación → consulta → el
     * def DynamoHelper = Java.type('utils.DynamoHelper')
     * def ddb = new DynamoHelper(cfg.table, cfg.key, cfg.secret, cfg.region)
 
+  @CreateItem
   Scenario: 001 - Intake of new elements
-    * def before = ddb.scanAll()
+    # Given a new inventory item
     * def newItem = ItemFactory.makeItem()
     * print 'Insertando:', newItem
+
+    # When the item is stored in DynamoDB
     * eval ddb.putItem(newItem)
-    * print 'Después del insert, scan:', ddb.scanAll()
+
+    # Then the item should exist in the inventory
     * def stored = ddb.getById(newItem.productId)
-    Then match stored.productId == newItem.productId
+    * match stored.productId == newItem.productId
+

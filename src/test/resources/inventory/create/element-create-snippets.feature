@@ -5,7 +5,7 @@ Feature: Reusable Scenario for Create Element in Data Base
     * def DynamoHelper = Java.type('utils.DynamoHelper')
     * def ddb = new DynamoHelper(cfg.table, cfg.key, cfg.secret, cfg.region)
 
-  @CreateElement
+  @ignore @CreateElementSnippet
   Scenario: Intake of new elements
     * def newItem = ItemFactory.makeItem()
     * print 'Insertando:', newItem

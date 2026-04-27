@@ -12,11 +12,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class ManagementTest {
 
     @Test
     void testParallel(){
-        Results results =  Runner.path("classpath:inventory").outputCucumberJson(true).tags("~@CreateElement").parallel(4);
+        Results results =  Runner.path("classpath:inventory").outputCucumberJson(true).tags("~@ignore").parallel(4);
+        assertNotNull(results, "Results is null");
         generateReport(results.getReportDir());
     }
 
