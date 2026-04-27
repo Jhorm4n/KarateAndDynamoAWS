@@ -134,25 +134,3 @@ Para ejecutar el proyecto, debes proporcionar las siguientes variables de entorn
 Si no se proporcionan, el proyecto puede usar un archivo de credenciales por defecto en `~/.aws/credentials`, pero se recomienda usar variables para seguridad. Asegúrate de que tu usuario de AWS tenga permisos para leer/escribir en DynamoDB. Para CI/CD, usa secretos de pipeline en lugar de variables de entorno.
 
 Después de ejecutar, verifica los resultados en la consola y reportes generados.
-
-## 8. Reportes
-
-Después de ejecutar pruebas, Karate genera reportes JSON (archivos de datos) y HTML (páginas web) en la carpeta `target/karate-reports`. cucumber-reporting mejora estos creando resúmenes HTML más detallados y visuales.
-
-Esto resuelve el problema de que los resultados crudos sean difíciles de interpretar, proporcionando vistas claras de qué pasó o falló, lo cual es crucial para depurar y compartir con equipos.
-
-## 9. Código Limpio y Mejores Prácticas Aplicadas
-
-Este proyecto sigue mejores prácticas para ser mantenible:
-- **Separación de responsabilidades**: Pruebas, utilidades y configs en carpetas separadas.
-- **Reutilización**: Snippets y clases ayudantes evitan duplicación de código.
-- **Pruebas deterministas**: Usar getById en lugar de scans previene pruebas inestables (flaky).
-- **Configuración externalizada**: Credenciales y ajustes no están codificados.
-- **Limpieza apropiada de recursos**: Clases como DynamoHelper cierran conexiones.
-- **Higiene de Git**: Un archivo .gitignore excluye archivos sensibles del control de versiones.
-
-Estas prácticas aseguran que el proyecto sea profesional, fácil de actualizar y escalable.
-
-## 10. Para Quién Es Este Proyecto
-
-Este proyecto es ideal para principiantes aprendiendo Karate, ya que proporciona ejemplos simples de automatización de pruebas. Ingenieros de automatización, QA y backend pueden usarlo para validar integraciones de DynamoDB rápidamente. Es especialmente útil para equipos construyendo sistemas de inventario, ayudándoles a asegurar la confiabilidad de datos sin experiencia profunda en AWS.
