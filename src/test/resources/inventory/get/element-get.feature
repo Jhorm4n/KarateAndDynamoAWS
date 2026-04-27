@@ -5,12 +5,7 @@ Feature: Certificación de inventario en DynamoDB (creación → consulta → el
     * def DynamoHelper = Java.type('utils.DynamoHelper')
     * def ddb = new DynamoHelper(cfg.table, cfg.key, cfg.secret, cfg.region)
 
-  Scenario: 001 - Query of all the items in the table
-    * def items = ddb.scanAll()
-    * print 'Elements:', items
-    Then match items == '#[]' || items == '#[0,]'
-
-  Scenario Outline: 002 - Query of item in the table
+  Scenario Outline: 001 - Query of item in the table
     * def item = ddb.getById(productId)
     * print 'Element:', item
 

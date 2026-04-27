@@ -19,7 +19,7 @@ La estructura se basa en convenciones Gradle:
   - clases Java de prueba y utilidades.
   - runners de Karate (`inventory.*.Element*Runner`).
   - helper de DynamoDB (`utils.DynamoHelper`).
-  - fábrica de datos de prueba (`utils.ItemFactory`).
+  - fábrica de datos de prueba (`factories.ItemFactory`).
   - prueba de integración general (`inventory.ManagementTest`).
 - `src/test/resources/`:
   - archivos de configuración de Karate y logging.

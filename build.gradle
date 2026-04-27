@@ -35,11 +35,18 @@ dependencies {
     
     // Commons IO
     testImplementation "commons-io:commons-io:2.15.1"
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
 }
 
 test {
+    gradle.startParameter.continueOnFailure = true
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
     useJUnitPlatform()
-    systemProperties = System.properties
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
 }
 
 // Estructura estándar de Gradle - archivos de prueba en src/test/java
@@ -52,4 +59,8 @@ sourceSets {
             srcDir 'src/test/resources'
         }
     }
+}
+
+tasks.named('processTestResources') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
