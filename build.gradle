@@ -21,11 +21,8 @@ dependencies {
     testImplementation "ch.qos.logback:logback-classic:1.5.3"
     testImplementation("net.masterthought:cucumber-reporting:5.7.6")
     testImplementation "net.datafaker:datafaker:2.2.2"
-    // Commons IO
-    testImplementation "commons-io:commons-io:2.15.1"
     testCompileOnly 'org.projectlombok:lombok:1.18.30'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
-
 }
 
 test {
