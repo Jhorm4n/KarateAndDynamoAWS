@@ -1,47 +1,85 @@
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-.kotlin
+#####################################
+# IDEs
+#####################################
 
-# Archivos de configuración con credenciales
-karate-config.js
-*.properties
-!gradle/wrapper/gradle-wrapper.properties
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# IntelliJ IDEA
+.idea/
 *.iml
-*.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
+# Eclipse / STS
 .project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+.classpath
+.settings/
+.metadata/
+.sts4-cache/
+.factorypath
+.apt_generated
+.recommenders/
+.externalToolBuilders/
+*.launch
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+#####################################
+# Build & Runtime
+#####################################
 
-### VS Code ###
-.vscode/
+# Gradle
+.gradle/
+build/
+target/
+gradletasknamecache
 
-### Mac OS ###
+# Java
+*.class
+
+#####################################
+# Karate / Test Artifacts
+#####################################
+
+# Karate reports
+build/karate-reports/
+build/cucumber-report/
+
+# Temporary test resources
+src/test/resources/feature/
+
+#####################################
+# OS / Editor Files
+#####################################
+
+# macOS
 .DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+#####################################
+# Logs & Temp
+#####################################
+
+*.log
+*.tmp
+*.swp
+*.bak
+tmp/
+bin/
+
+#####################################
+# Code Quality / Analysis Tools
+#####################################
+
+# Sonar / Scanner
+.scannerwork/
+.sonar/
+
+#####################################
+# Gradle Wrapper (KEEP)
+#####################################
+
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
