@@ -20,6 +20,9 @@ function fn() {
             table:  karate.properties['DDB_TABLE']             || java.lang.System.getenv('DDB_TABLE') || 'inventory'
         }
     };
+
+    karate.configure('retry', { count: 3, interval: 1000 });
+
     if (!cfg.aws.key || !cfg.aws.secret) {
         karate.fail('Faltan credenciales AWS (AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY)');
     } else {

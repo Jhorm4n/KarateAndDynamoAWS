@@ -8,8 +8,8 @@ repositories {
 
 ext {
     karateVersion  = '1.5.2'
-    awsSdkVersion  = '2.25.31'
-    junitVersion   = '5.10.2'
+    awsSdkVersion  = '2.26.0'
+    junitVersion   = '5.11.0'
 }
 
 dependencies {

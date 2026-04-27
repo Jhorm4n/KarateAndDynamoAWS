@@ -170,8 +170,11 @@ public class DynamoHelper implements AutoCloseable {
     }
 
     private static Item attributeMapToItem(Map<String, AttributeValue> map) {
+        if (map == null || !map.containsKey("productId")) {
+            LOGGER.error("Invalid attribute map for item conversion");
+            throw new IllegalArgumentException("Attribute map is null or missing productId");
+        }
         Item item = new Item();
-
         item.setProductId(map.get("productId").s());
         item.setName(map.get("name").s());
         item.setCategory(map.get("category").s());
