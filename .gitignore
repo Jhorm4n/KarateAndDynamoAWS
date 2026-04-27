@@ -1,90 +1,85 @@
-/.idea
-/target
-src/test/resources/feature/
-/.gradle/
-/out/
-/bin/
-/.scannerwork/
-/.sonar/
-/.settings/
+#####################################
+# IDEs
+#####################################
 
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
 
-# Created by https://www.gitignore.io/api/gradle,eclipse
-# Edit at https://www.gitignore.io/?templates=gradle,eclipse
-
-### Eclipse ###
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
+# Eclipse / STS
+.project
+.classpath
 .settings/
-.loadpath
-.recommenders
-
-# External tool builders
+.metadata/
+.sts4-cache/
+.factorypath
+.apt_generated
+.recommenders/
 .externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
 *.launch
 
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
+#####################################
+# Build & Runtime
+#####################################
 
-# CDT-specific (C/C++ Development Tooling)
-.cproject
+# Gradle
+.gradle/
+build/
+target/
+gradletasknamecache
 
-# CDT- autotools
-.autotools
+# Java
+*.class
 
-# Java annotation processor (APT)
-.factorypath
+#####################################
+# Karate / Test Artifacts
+#####################################
 
-# PDT-specific (PHP Development Tools)
-.buildpath
+# Karate reports
+build/karate-reports/
+build/cucumber-report/
 
-# sbteclipse plugin
-.target
+# Temporary test resources
+src/test/resources/feature/
 
+#####################################
+# OS / Editor Files
+#####################################
 
-# Scala IDE specific (Scala & Java development for Eclipse)
-.cache-main
-.scala_dependencies
-.worksheet
+# macOS
+.DS_Store
 
-### Eclipse Patch ###
-# Eclipse Core
-.project
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+# Linux
+*~
 
-# Annotation Processing
-.apt_generated
+#####################################
+# Logs & Temp
+#####################################
 
-.sts4-cache/
+*.log
+*.tmp
+*.swp
+*.bak
+tmp/
+bin/
 
-### Gradle ###
-.gradle
+#####################################
+# Code Quality / Analysis Tools
+#####################################
 
+# Sonar / Scanner
+.scannerwork/
+.sonar/
 
-# Ignore Gradle GUI config
-gradle-app.setting
+#####################################
+# Gradle Wrapper (KEEP)
+#####################################
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Cache of project
-.gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
-
-### Gradle Patch ###
-
-
-# End of https://www.gitignore.io/api/gradle,eclipse
-/build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
